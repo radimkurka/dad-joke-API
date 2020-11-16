@@ -1,7 +1,12 @@
 const getDadJoke = async () => {
-    const config = { headers: { Accept: "application/json" } }
-    const result = await axios.get("https://icanhazdadjoke.com/", config)
-    return result.data.joke;
+    try {
+        const config = { headers: { Accept: "application/json" } }
+        const result = await axios.get("https://icanhazdadjoke.com/", config)
+        return result.data.joke;
+    } catch (e) {
+        return "No jokes are available, there must have been some kind of error..."
+    }
+
 }
 
 const text = document.querySelector("#jokeDisplay");
