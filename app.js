@@ -4,7 +4,7 @@ const getDadJoke = async () => {
         const result = await axios.get("https://icanhazdadjoke.com/", config)
         return result.data.joke;
     } catch (e) {
-        return "No jokes are available, there must have been some kind of error..."
+        return `No jokes are available, there must have been some kind of error... ${e}`
     }
 
 }
